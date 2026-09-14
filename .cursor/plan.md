@@ -7,6 +7,7 @@ The product is an **itinerary planning app**. Features revolve around aiding in 
 | Question | Canonical doc |
 |---|---|
 | Project vision | This file |
+| Architectural Decisions | [architecture file](architecture.md) |
 
 ## End Goal
 
