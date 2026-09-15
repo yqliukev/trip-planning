@@ -29,7 +29,7 @@ Repo and runtime:
 
 - Layout: [`web/`](web/) (Vite React), [`api/`](api/) (Hono + service layer), and [`mcp/`](mcp/) (thin MCP adapter) at the repo root, plus a root [`docker-compose.yml`](docker-compose.yml) and a shared `.env.example`.
 - **Node 22+**, **npm workspaces** so `web`, `api`, and `mcp` share Zod schemas and types without a heavy monorepo tool.
-- Data access via **Drizzle ORM** + **drizzle-kit** migrations. PostGIS points handled via Drizzle geometry / raw `sql` where needed.
+- Data access via **Sequelize** + **sequelize-cli** migrations. PostGIS points handled via Sequelize geometry types / SQL as needed.
 - No Python runtime anywhere in the project.
 
 Why TypeScript over Python for the backend: Python FastAPI is common in LLM *application* code (LangChain, tool-calling scripts, notebooks), but that is not what this project is. Agents ground on data through a stable HTTP/MCP surface, which is language-agnostic. TypeScript keeps one language across the app, shares types with the Vite frontend, and uses the official MCP TypeScript SDK. Next.js is rejected because route handlers buried in a fullstack app are a poor MCP/tool target; a standalone API process is a cleaner contract.
