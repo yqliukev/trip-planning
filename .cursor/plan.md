@@ -34,3 +34,5 @@ With those inputs, the agent uses the application in place of the user to create
 - Calculating and picking routes
 
 The itinerary it produces is the one stored in the application.
+
+The agent should support being called by another agent
